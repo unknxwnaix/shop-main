@@ -23,6 +23,7 @@ namespace client
             LoadProducts();
         }
 
+        // порнохуяче
         private async void LoadProducts()
         {
             try
