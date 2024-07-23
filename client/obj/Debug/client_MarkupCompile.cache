@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\aiX\Desktop\shop-main\client\obj\Debug\
+C:\Users\user\Source\Repos\shop-main\client\obj\Debug\
 client
 none
 false
 DEBUG;TRACE
-C:\Users\aiX\Desktop\shop-main\client\App.xaml
+C:\Users\user\Source\Repos\shop-main\client\App.xaml
 6-1224235705
 
-11-1241686260
-18-1547591329
+12971192418
+18-1620102867
 CashierWindow.xaml;DataGridStyle.xaml;MainWindow.xaml;CashPage.xaml;MenuTheme.xaml;PaymentWindow.xaml;
 
-False
+True
 
