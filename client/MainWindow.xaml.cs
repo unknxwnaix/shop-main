@@ -9,6 +9,7 @@ using System.Text;
 
 namespace client
 {
+    //пидорасы гнили
     public partial class MainWindow : Window
     {
         private ObservableCollection<Product> products = new ObservableCollection<Product>();
