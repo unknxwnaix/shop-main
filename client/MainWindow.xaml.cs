@@ -9,7 +9,9 @@ using System.Text;
 
 namespace client
 {
+    #region пидорасы гнили
     //пидорасы гнили
+    #endregion
     public partial class MainWindow : Window
     {
         private ObservableCollection<Product> products = new ObservableCollection<Product>();
