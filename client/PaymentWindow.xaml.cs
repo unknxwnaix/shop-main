@@ -20,18 +20,17 @@ namespace client
     public partial class PaymentWindow : Window
     {
 
-        public int sum = 5000;
         public PaymentWindow()
         {
             InitializeComponent();
-            bill.Text = $"К оплате: {sum.ToString()}";
+            bill.Text = $"К оплате: {ProductManager.total.ToString()} ₽";
         }
 
         private void finishBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(pay.Text) >= sum)
+            if (Convert.ToInt32(pay.Text) >= ProductManager.total)
             {
-                change.Text = $"Сдача: {(Convert.ToInt32(pay.Text) - sum).ToString()}";
+                change.Text = $"Сдача: {(Convert.ToInt32(pay.Text) - ProductManager.total).ToString()} ₽";
             }
             else
             {

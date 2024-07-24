@@ -14,15 +14,17 @@ namespace client
     #endregion
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Product> products = new ObservableCollection<Product>();
-        private ObservableCollection<Product> displayedProducts = new ObservableCollection<Product>();
+        /*private ObservableCollection<Product> products = new ObservableCollection<Product>();
+        private ObservableCollection<Product> displayedProducts = new ObservableCollection<Product>();*/
         private StringBuilder inputBuffer = new StringBuilder();
 
         public MainWindow()
         {
             InitializeComponent();
-            productGrid.ItemsSource = displayedProducts; // Устанавливаем ItemsSource для DataGrid
+            productGrid.ItemsSource = ProductManager.displayedProducts; // Устанавливаем ItemsSource для DataGrid
             LoadProducts();
+            CashierWindow cashierWindow = new CashierWindow();
+            cashierWindow.Show();
         }
 
         // порнохуяче
@@ -36,7 +38,7 @@ namespace client
 
                 foreach (var product in productList)
                 {
-                    products.Add(product);
+                    ProductManager.products.Add(product);
                 }
 
                 MessageBox.Show("Продукты успешно загружены");
@@ -77,11 +79,11 @@ namespace client
                 }
 
                 MessageBox.Show($"Ищем продукт с штрих-кодом: {barcode}");
-                var product = products.FirstOrDefault(p => p.Barcode == barcode);
+                var product = ProductManager.products.FirstOrDefault(p => p.Barcode == barcode);
                 if (product != null)
                 {
                     // Поиск в отображаемой коллекции
-                    var displayedProduct = displayedProducts.FirstOrDefault(p => p.Barcode == barcode);
+                    var displayedProduct = ProductManager.displayedProducts.FirstOrDefault(p => p.Barcode == barcode);
                     if (displayedProduct != null)
                     {
                         // Если продукт уже есть, увеличиваем его количество
@@ -93,7 +95,7 @@ namespace client
                     {
                         // Если продукта нет в отображаемой коллекции, добавляем его
                         product.Quantity = 1; // Устанавливаем начальное количество
-                        displayedProducts.Add(product);
+                        ProductManager.displayedProducts.Add(product);
                     }
 
                     // Обновление итоговой суммы
@@ -116,7 +118,7 @@ namespace client
             try
             {
                 decimal total = 0;
-                foreach (Product product in displayedProducts)
+                foreach (Product product in ProductManager.displayedProducts)
                 {
                     total += product.Retail_Price * product.Quantity;
                 }
