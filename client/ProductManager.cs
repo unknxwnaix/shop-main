@@ -12,10 +12,13 @@ namespace client
         public static ObservableCollection<Product> products { get; set; }
         public static ObservableCollection<Product> displayedProducts { get; set; }
 
+        public static decimal total { get; set; }
+
         static ProductManager()
         {
             products = new ObservableCollection<Product>();
             displayedProducts = new ObservableCollection<Product>();
+            total = 0;
         }
     }
 }

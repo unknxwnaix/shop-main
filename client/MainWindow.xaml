@@ -28,11 +28,11 @@
         <TextBlock Text="Чек" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Grid.ColumnSpan="2"/>
         <DataGrid x:Name="productGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#e3e3e3" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Штрих-код" Binding="{Binding Barcode}" />
-                <DataGridTextColumn Header="Цена" Binding="{Binding Retail_Price, StringFormat={}{0:F2} ₽}" />
-                <DataGridTextColumn Header="Вес" Binding="{Binding Weight}" />
-                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" />
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Штрих-код" Binding="{Binding Barcode}" Width="*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Retail_Price, StringFormat={}{0:F2} ₽}" Width="0.6*"/>
+                <DataGridTextColumn Header="Вес" Binding="{Binding Weight}" Width="0.5*"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="0.7*"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock x:Name="resultTb" Text="Итог: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" FontSize="24" Margin="15"/>
